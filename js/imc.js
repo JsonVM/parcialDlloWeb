@@ -46,6 +46,7 @@ function calcularIMC(index) {
     return imc;
 }
 
+//para mostrar el estado del imc de la persona
 function mostrarEstado(index){
     let persona = personas[index]
     let nombre = persona.nombres
