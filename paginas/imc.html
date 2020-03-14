@@ -12,73 +12,77 @@
 
 <body>
 
-    <div class="row">
-        <div class="col-sm-6">
-
-            <div class="card" style="width: 40rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Ingresar datos para calcular IMC</h5>
-
-                    <form>
-                        <div>
-                            <label for="tipo_identificacion">tipo_identificacion</label>
-                            <select class="form-control" id="tipo_identificacion">
-                                <option>CC</option>
-                                <option>CE</option>
-                                <option>RN</option>
-                                <option>TI</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="Identificacion">Identificacion</label>
-                            <input type="text" class="form-control" id="Identificacion">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="Nombres">Nombres</label>
-                            <input type="text" class="form-control" id="Nombres">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="Apellidos">Apellidos</label>
-                            <input type="text" class="form-control" id="Apellidos">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="Correo">Correo</label>
-                            <input type="text" class="form-control" id="Correo">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="Peso">Peso</label>
-                            <input type="number" class="form-control" id="Peso">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="Estatura">Estatura</label>
-                            <input type="number" class="form-control" id="Estatura">
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Ingresar</button>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-sm-6">
-
-            <div class="card" style="width: 40rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Ingresar datos para calcular IMC</h5>
+    <div class="card" style="width: 30rem;">
         
-                    
-                </div>
+        <div class="card-body">
+          <h5 class="card-title">Registrar para calcuar IMC</h5>
+          <form action="javascript:void(0)" onsubmit="agregarPersona()">
+            <div>
+                <label for="tipo_identificacion">tipo_identificacion</label>
+                <select class="form-control" id="tipo_identificacion">
+                    <option>CC</option>
+                    <option>CE</option>
+                    <option>RN</option>
+                    <option>TI</option>
+                </select>
             </div>
-
+    
+            <div class="form-group">
+                <label for="Identificacion">Identificacion</label>
+                <input type="text" class="form-control" id="Identificacion" placeholder="Ingrese su identificacion">
+            </div>
+    
+            <div class="form-group">
+                <label for="Nombres">Nombres</label>
+                <input type="text" class="form-control" id="Nombres" placeholder="Ingrese sus nombres">
+            </div>
+    
+            <div class="form-group">
+                <label for="Apellidos">Apellidos</label>
+                <input type="text" class="form-control" id="Apellidos" placeholder="Ingrese sus apellidos">
+            </div>
+    
+            <div class="form-group">
+                <label for="Correo">Correo</label>
+                <input type="text" class="form-control" id="Correo" placeholder="Ingrese su correo">
+            </div>
+    
+            <div class="form-group">
+                <label for="Peso">Peso</label>
+                <input type="number" class="form-control" id="Peso" placeholder="Ingrese su peso">
+            </div>
+    
+            <div class="form-group">
+                <label for="Estatura">Estatura</label>
+                <input type="number" class="form-control" id="Estatura" placeholder="Ingrese su estatura">
+            </div>
+    
+            <input id="btncrearPersona"class="btn btn-primary" type="submit" value="Agregar persona">
+            <input id="btnactualizarPersona"class="btn btn-primary" type="button" value="Actualizar persona" onClick="actualizarPersona()">
+       
+        </form>
         </div>
-    </div>
+      </div>
 
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">tipo id</th>
+            <th scope="col">Identificación</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Estatura</th>
+            <th scope="col">IMC</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody id="lista_personas">
+         
+        </tbody>
+      </table>
 
 
 
@@ -93,6 +97,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="../js/imc.js"></script>
+
 </body>
 
 </html>
