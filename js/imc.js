@@ -28,6 +28,7 @@ function listarPersonas() {
         data += `<td>${calcularIMC(i)}</td>`
         data += `<td><input class="btn btn-primary" type="button" onClick="cargarInformacion(${i})" value="editar"></td>`
         data += '<td><input class="btn btn-primary" type="button" onClick="eliminarPersona(' + i + ')" value="eliminar"></td>'
+        data += '<td><input class="btn btn-primary" type="button" onClick="mostrarEstado(' + i + ')" value="ver estado"></td>'
         data += "</tr>"
     }
 
@@ -43,6 +44,17 @@ function calcularIMC(index) {
     imc = peso/(estatura*estatura)
     imc = imc.toFixed(2)
     return imc;
+}
+
+function mostrarEstado(index){
+    let persona = personas[index]
+    let nombre = persona.nombres
+    let IMC = calcularIMC(index)
+    if (IMC >= 25){
+        alert(nombre + " está en sobrepeso")
+    } else {
+        alert(nombre + " está en un peso normal")
+    }
 }
 
 //para agregar una persona a la tabla de personas
