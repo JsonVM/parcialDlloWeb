@@ -37,12 +37,15 @@ function listarPersonas() {
 //funcion para calcular el imc con la formula peso/estatura al cuadrado
 function calcularIMC(index) {
     let persona = personas[index]
+    let peso = parseFloat(persona.peso)
+    let estatura = parseFloat(persona.estatura)
     let imc = 0
-    imc = (persona.peso) / (persona.estatura * persona.estatura)
+    imc = peso/(estatura*estatura)
+    imc = imc.toFixed(2)
     return imc;
 }
 
-
+//para agregar una persona a la tabla de personas
 function agregarPersona() {
     let tipo_identificacion = document.getElementById("tipo_identificacion").value
     let identificacion = document.getElementById("Identificacion").value
@@ -67,6 +70,7 @@ eliminarPersona = function (index) {
     listarPersonas()
 };
 
+//para poner la informacion de una persona al ir a actualizarla
 function cargarInformacion(index) {
     let persona = personas[index]
     personaTemp = index
@@ -82,6 +86,7 @@ function cargarInformacion(index) {
     document.getElementById("btnactualizarPersona").style.display = "inline"
 }
 
+//para vacear los campos del formulario
 function limpiarCampos() {
     document.getElementById("tipo_identificacion").value = ""
     document.getElementById("Identificacion").value = ""
@@ -92,6 +97,7 @@ function limpiarCampos() {
     document.getElementById("Estatura").value = ""
 }
 
+//para tomar los valores que se encuentran en el formulario
 function obtenerValores() {
     let tipo_identificacion = document.getElementById("tipo_identificacion").value
     let identificacion = document.getElementById("Identificacion").value
@@ -105,6 +111,7 @@ function obtenerValores() {
     return persona;
 }
 
+//para actualizar una persona en el arreglo de personas
 function actualizarPersona() {
     let personaActualizada = obtenerValores()
     personas.splice(personaTemp, 1, personaActualizada)
@@ -115,6 +122,7 @@ function actualizarPersona() {
     localStorage.setItem('personas', JSON.stringify(personas));
 }
 
+//para cargar lo que hay en el localstorage
 function localS() {
     var datosLocal = JSON.parse(localStorage.getItem('personas'));
     if (datosLocal === null) {
