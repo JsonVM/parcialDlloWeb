@@ -69,10 +69,20 @@ function agregarPersona() {
     let estatura = document.getElementById("Estatura").value
 
     let persona = { tipo_identificacion: tipo_identificacion, identificacion: identificacion, nombres: nombres, apellidos: apellidos, correo: correo, peso: peso, estatura: estatura }
-    personas.push(persona)
-
-    localStorage.setItem('personas', JSON.stringify(personas));
-    listarPersonas()
+    let existe = false
+    for(let i=0; i < personas.length; i++){
+        if (personas[i].identificacion == persona.identificacion)
+            existe = true
+    }
+    console.log(existe)
+    if(!existe){
+        personas.push(persona)
+        localStorage.setItem('personas', JSON.stringify(personas));
+        listarPersonas()
+        existe = false;
+    } else{
+        alert("ya existe el usuario")
+    }
     limpiarCampos()
 };
 
