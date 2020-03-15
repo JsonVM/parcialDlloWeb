@@ -2,6 +2,8 @@
 
 ## Crear una página web para la gestión del índice de masa corporal de los usuarios.
 
+### Autor
+-Jheyson Velez Marin jheyson.v.m1@gmail.com
 ### La información requerida para los usuarios es:
 - Tipo de identificación [CC, CE, RN, TI]
 - Identificación
